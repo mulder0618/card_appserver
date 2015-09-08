@@ -9,8 +9,9 @@
         http://www.springframework.org/schema/jms/spring-jms.xsd
         http://activemq.apache.org/schema/core
         http://activemq.apache.org/schema/core/activemq-core-5.10.0.xsd">
-    <amq:connectionFactory id="amqConnectionFactory"
-                           brokerURL="tcp://localhost:61616" userName="admin" password="admin" />
+
+
+    <amq:connectionFactory id="amqConnectionFactory" brokerURL="tcp://10.6.4.130:61616" userName="admin" password="admin" />
     <bean id="connectionFactory"
           class="org.springframework.jms.connection.CachingConnectionFactory">
         <constructor-arg ref="amqConnectionFactory" />
