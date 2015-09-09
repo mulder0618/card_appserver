@@ -10,7 +10,7 @@ import java.util.HashMap;
 /**
  * Created by admin on 2015/7/29.
  */
-public class QueueSendMailReceiver implements MessageListener {
+public class QueueTestReceiver implements MessageListener {
 
 
     public void onMessage(Message message) {
