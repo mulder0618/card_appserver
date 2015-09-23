@@ -75,4 +75,25 @@ public class TestController {
         return modelAndView;
     }
 
+
+    /**
+     * 测试参数
+     * @param modelAndView
+     * @param param1
+     * @param param2
+     * @param param3
+     * @return
+     */
+    @RequestMapping("/testparam" )
+    public ModelAndView testparam(
+            ModelAndView modelAndView,
+            String param1,
+            String param2,
+            String param3
+    ){
+        modelAndView.setViewName("test/testindex");
+        return modelAndView;
+    }
+
+
 }

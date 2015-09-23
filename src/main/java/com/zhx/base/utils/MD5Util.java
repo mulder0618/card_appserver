@@ -5,7 +5,7 @@ package com.zhx.base.utils;
  */
 import java.security.MessageDigest;
 public class MD5Util {
-    public final static String MD5(String s) {
+    public final static String endcodeMd5(String s) {
         // 用作十六进制的数组.
         byte hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
                 'a', 'b', 'c', 'd', 'e', 'f' };
@@ -28,7 +28,7 @@ public class MD5Util {
         }
     }
     public static void main(String[] args) {
-        System.out.println(MD5Util.MD5("20121221"));
-        System.out.println(MD5Util.MD5("加密"));
+        System.out.println(MD5Util.endcodeMd5("20121221"));
+        System.out.println(MD5Util.endcodeMd5("加密"));
     }
 }

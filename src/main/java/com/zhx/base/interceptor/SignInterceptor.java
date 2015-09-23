@@ -2,21 +2,21 @@ package com.zhx.base.interceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
 /**
  * Created by mulder on 2015/6/11.
  */
-public class CommonInterceptor implements HandlerInterceptor {
+public class SignInterceptor implements HandlerInterceptor {
 
-    private Logger log = Logger.getLogger(String.valueOf(CommonInterceptor.class));
+    private Logger log = Logger.getLogger(String.valueOf(SignInterceptor.class));
 
-    public CommonInterceptor() {
+    public SignInterceptor() {
         // TODO Auto-generated constructor stub
     }
 
@@ -26,24 +26,26 @@ public class CommonInterceptor implements HandlerInterceptor {
         this.mappingURL = mappingURL;
     }
 
-    /**
-     * 在业务处理器处理请求之前被调用
-     * 如果返回false
-     * 从当前的拦截器往回执行所有拦截器的afterCompletion(),再退出拦截器链
-     * <p/>
-     * 如果返回true
-     * 执行下一个拦截器,直到所有的拦截器都执行完毕
-     * 再执行被拦截的Controller
-     * 然后进入拦截器链,
-     * 从最后一个拦截器往回执行所有的postHandle()
-     * 接着再从最后一个拦截器往回执行所有的afterCompletion()
-     */
+
     public boolean preHandle(
             HttpServletRequest request,
             HttpServletResponse response,
             Object handler)
             throws Exception
     {
+        StringBuffer paramBuffer = new StringBuffer();
+        Map paramMap =  request.getParameterMap();
+        Iterator<Map.Entry<String, String[]>> entries = paramMap.entrySet().iterator();
+        while (entries.hasNext()) {
+            Map.Entry<String, String[]> entry = entries.next();
+            paramBuffer.append(entry.getKey());
+            paramBuffer.append("=");
+            for (String val : entry.getValue() ) {
+                paramBuffer.append(val);
+            }
+            paramBuffer.append("&");
+        }
+        System.out.println(paramBuffer.toString().substring(0,paramBuffer.length()-1));
         return true;
     }
 

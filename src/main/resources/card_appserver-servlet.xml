@@ -64,10 +64,9 @@
     <mvc:interceptors>
         <!-- 多个拦截器,顺序执行 -->
         <mvc:interceptor>
-            <mvc:mapping path="/order/*" /><!-- 如果不配置或/*,将拦截所有的Controller -->
-            <mvc:mapping path="/receipt/*" />
-            <mvc:mapping path="/refund/*" />
-            <bean class="com.zhx.base.interceptor.CommonInterceptor"></bean>
+            <!-- 如果不配置或/**,将拦截所有的Controller -->
+            <mvc:mapping path="/**" />
+            <bean class="com.zhx.base.interceptor.SignInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
 

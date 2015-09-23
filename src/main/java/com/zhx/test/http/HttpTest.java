@@ -13,7 +13,7 @@ public class HttpTest {
     public  static void main(String[] args){
         String checkurl = "http://180.149.144.70:8081/tapi/tuan/out/cert/code/check";
         String statusurl = "http://180.149.144.70:8081/tapi/tuan/out/cert/code/status";
-        String paramMd5 = MD5Util.MD5("userEmail=lalal@baidu.com&code=587611610698");
+        String paramMd5 = MD5Util.endcodeMd5("userEmail=lalal@baidu.com&code=587611610698");
         String param="auth={\"userName\":\"lbc_test_local\",\"token\":\"9a0e839de69962df88a08b256002ab60\"}&userEmail=lalal@baidu.com&code=587611610698&sign="+paramMd5;
         long startTime=System.currentTimeMillis();
         String result = HttpRequest.sendPost(checkurl,param);
