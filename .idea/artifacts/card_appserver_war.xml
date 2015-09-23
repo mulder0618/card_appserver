@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="card_appserver:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="springmvc-base.war">
+    <root id="archive" name="card-appserver.war">
       <element id="artifact" artifact-name="card_appserver:war exploded" />
     </root>
   </artifact>

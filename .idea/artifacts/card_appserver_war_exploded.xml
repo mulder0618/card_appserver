@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="card_appserver:war exploded">
-    <output-path>$PROJECT_DIR$/target/springmvc-base</output-path>
+    <output-path>$PROJECT_DIR$/target/card-appserver</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -59,7 +59,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/springmvc-base/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/card-appserver/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="card_appserver/web/Web" />
     </root>

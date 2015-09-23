@@ -24,7 +24,7 @@ public class TestController {
     private QueueSender queueSender;
 
     /**
-     * ²âÊÔÒ³Ãæ
+     * æµ‹è¯•é¡µé¢
      * @param modelAndView
      * @return
      */
@@ -35,7 +35,7 @@ public class TestController {
     }
 
     /**
-     * ²âÊÔmysqlÁ´½Ó
+     * æµ‹è¯•mysqlé“¾æ¥
      * @param modelAndView
      * @return
      */
@@ -48,28 +48,28 @@ public class TestController {
     }
 
     /**
-     * ²åÈë²âÊÔ
+     * æ’å…¥æµ‹è¯•
      * @param modelAndView
      * @return
      */
     @Transactional
     @RequestMapping("/testinsert")
     public ModelAndView testinsert(ModelAndView modelAndView){
-        testService.testInsert("²âÊÔ");
-        testService.testInsert("²â1231222222sdfdsfsdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsdfsÊÔ");
+        testService.testInsert("æµ‹è¯•");
+        testService.testInsert("æµ‹1231222222sdfdsfsdfdsfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffsdfsè¯•");
         modelAndView.setViewName("test/testindex");
         return modelAndView;
     }
 
     /**
-     * ²âÊÔ¶ÓÁĞ
+     * æµ‹è¯•é˜Ÿåˆ—
       * @param modelAndView
      * @return
      */
     @RequestMapping("/testqueue")
     public ModelAndView testqueue(ModelAndView modelAndView){
         HashMap param = new HashMap();
-        param.put("msg", "²âÊÔ");
+        param.put("msg", "æµ‹è¯•");
         queueSender.send("test.queue", param);
         modelAndView.setViewName("test/testindex");
         return modelAndView;
